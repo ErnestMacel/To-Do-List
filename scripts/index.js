@@ -1,12 +1,15 @@
-let choresList = [];
+let choresList = JSON.parse(localStorage.getItem("to-do")) || [];
+
 renderPage();
+
+
 function renderPage() {
   const container = document.querySelector(".chores-container");
   container.innerHTML = "";
   choresList.forEach((element) => {
     container.innerHTML += `
     <div class="chores-bar" id="${element.No}">
-    <p>&bull;${element.name}</p>
+    <p>&bull; ${element.name}</p>
     <button class="remove-button" data-id="${element.No} ">
     remove</button>
     </div>`;
@@ -16,6 +19,7 @@ function renderPage() {
       });
     });
   });
+  saveLocal();
 }
 
 function addChores() {
@@ -42,3 +46,7 @@ function removeChores(id) {
 
 document.getElementById("add-button").addEventListener("click", addChores);
 document.getElementById("delete-button").addEventListener("click", resetChores);
+
+function saveLocal() {
+  localStorage.setItem("to-do", JSON.stringify(choresList));
+}
