@@ -1,0 +1,80 @@
+/* @media  (max-device-width:400px) {
+  #chores {
+    background-color: blue;
+  }
+} */
+body {
+  background-color: rgb(239, 239, 239);
+  height: 5000px;
+  padding-top: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header-container {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  box-shadow: 0 5px 10px rgb(209, 209, 209);
+  display: flex;
+  justify-content: center;
+}
+.chores-container {
+  width: 500px;
+}
+.chores-container p {
+  margin: 10px;
+}
+.input-holder {
+  display: flex;
+  margin-top: 30px;
+}
+#chores-input {
+  margin-left: 10px;
+  padding: 2px 10px;
+  border: none;
+  width: 300px;
+  font-size: 25px;
+  border-radius: 20px;
+  margin-right: 20px;
+  box-shadow: 2px 3px 5px rgb(203, 203, 203);
+}
+
+#add-button {
+  font-size: 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background-color: rgb(120, 224, 120);
+  box-shadow: 2px 3px 5px rgb(118, 118, 118);
+  transition: all 0.15s;
+  cursor: pointer;
+}
+#delete-button {
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background-color: rgb(224, 94, 94);
+  box-shadow: 2px 3px 5px rgb(118, 118, 118);
+  transition: all 0.15s;
+  cursor: pointer;
+}
+#add-button:hover {
+  opacity: 0.8;
+  box-shadow: 2px 3px 5px rgb(123, 7, 172);
+}
+#add-button:active {
+  box-shadow: 2px 3px 5px rgb(238, 107, 0);
+  opacity: 0.6;
+}
+#watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
