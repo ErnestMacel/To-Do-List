@@ -10,8 +10,7 @@ function renderPage() {
     container.innerHTML += `
     <div class="chores-bar" id="${element.No}">
     <p>&bull; ${element.name}</p>
-    <button class="remove-button" data-id="${element.No} ">
-    remove</button>
+    <button class="remove-button" data-id="${element.No} ">Remove</button>
     </div>`;
     document.querySelectorAll(".remove-button").forEach((element) => {
       element.addEventListener("click", () => {
@@ -49,4 +48,10 @@ document.getElementById("delete-button").addEventListener("click", resetChores);
 
 function saveLocal() {
   localStorage.setItem("to-do", JSON.stringify(choresList));
+}
+
+function isEnterPress(event){
+  if (event.key==="Enter"){
+    addChores();
+  }
 }
