@@ -1,7 +1,8 @@
 let choresList = JSON.parse(localStorage.getItem("to-do")) || [];
 
 renderPage();
-
+// puts focus on input:
+focusOnInput();
 
 function renderPage() {
   const container = document.querySelector(".chores-container");
@@ -50,8 +51,15 @@ function saveLocal() {
   localStorage.setItem("to-do", JSON.stringify(choresList));
 }
 
-function isEnterPress(event){
-  if (event.key==="Enter"){
+function isEnterPress(event) {
+  if (event.key === "Enter") {
     addChores();
   }
+}
+
+// bringing focus into the input box:
+function focusOnInput() {
+  document.addEventListener("keyup", function (e) {
+    e.key === "/" && document.getElementById("chores-input").focus();
+  });
 }
